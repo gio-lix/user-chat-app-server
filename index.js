@@ -12,8 +12,8 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-
-mongoose.connect(process.env.MONGO_URL, () => {
+mongoose.set("strictQuery", false);
+mongoose.connect(process.env.MONGO_URL,  () => {
     console.log("mongodb is connecting!")
 })
 
