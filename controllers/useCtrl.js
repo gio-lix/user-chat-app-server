@@ -18,7 +18,7 @@ class UseCtrl {
             // }
 
 
-            const checkUser = await UserModal.findOne({email})
+            const checkUser = await UserModal.findOne({email}, null, { strictQuery: false })
             if (checkUser) {
                 return res.json({msg: "Username already used", status: false})
             }
@@ -40,7 +40,7 @@ class UseCtrl {
     async loginUser(req, res) {
         const {email, password} = req.body
         try {
-            const checkUser = await UserModal.findOne({email})
+            const checkUser = await UserModal.findOne({email}, null, { strictQuery: false })
             if (!checkUser) {
                 return res.json({msg: "User in this email does not exist.", status: false})
             }
