@@ -1,6 +1,8 @@
 import userRout from "./userRout.js";
+import messageRouter from "./messageRouter.js";
 
-const routers = [
-    userRout
+const routes = [
+    userRout,
+    messageRouter
 ]
-export default routers
+export default routes
