@@ -17,7 +17,10 @@ const app = express()
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: [ 'http://localhost:3000', "https://user-chat-app-frontend.onrender.com"],
+        origin: [
+            'http://localhost:3000',
+            "https://user-chat-app-frontend.onrender.com"
+        ],
         credentials: true
     }
 });
@@ -29,7 +32,6 @@ mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URL, () => {
     console.log("mongodb is connecting!")
 })
-
 
 app.use("/api", routes)
 

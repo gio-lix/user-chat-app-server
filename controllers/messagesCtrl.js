@@ -28,7 +28,7 @@ class MessagesCtrl {
 
             const projectMessages = messages.map((msg) => {
                 return {
-                    fromSelf: msg.sender.toString() === from,
+                    from: msg.sender.toString() === from && msg.sender,
                     message: msg.message.text
                 }
             })
